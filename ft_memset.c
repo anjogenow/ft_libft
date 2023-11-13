@@ -6,9 +6,11 @@
 /*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:02:25 by agenow            #+#    #+#             */
-/*   Updated: 2023/11/13 18:02:32 by agenow           ###   ########.fr       */
+/*   Updated: 2023/11/13 18:46:24 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*memset(void *b, int c, size_t len)
 {
