@@ -1,14 +1,16 @@
 # List of all mandatory functions
 
-- [ ] isalpha
-- [ ] isdigit
-- [ ] isalnum
-- [ ] isascii
-- [ ] isprint
-- [ ] strlen
+#include "libft.h"
+
+- [x] isalpha
+- [x] isdigit
+- [x] isalnum
+- [x] isascii
+- [x] isprint
+- [x] strlen
 - [x] memset
 - [x] bzero
-- [ ] memcpy
+- [x] memcpy
 - [ ] memmove
 - [ ] strlcpy
 - [ ] strlcat
