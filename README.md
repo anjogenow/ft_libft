@@ -12,9 +12,9 @@
 - [x] bzero
 - [x] memcpy
 - [x] memmove
-- [ ] strlcpy
+- [x] strlcpy
 - [ ] strlcat
-- [ ] toupper
+- [x] toupper
 - [ ] tolower
 - [ ] strchr
 - [ ] strrchr
