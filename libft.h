@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agenow <agenow@student.42berlin.de>        +#+  +:+       +#+        */
+/*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:03:16 by agenow            #+#    #+#             */
-/*   Updated: 2023/11/14 09:46:05 by agenow           ###   ########.fr       */
+/*   Updated: 2023/11/17 16:27:00 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <unistd.h>
-#include <stdlib.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <string.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -48,3 +51,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(const char *s, int fd);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+#endif
