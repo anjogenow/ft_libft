@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agenow <agenow@student.42.fr>              +#+  +:+       +#+        */
+/*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 11:05:30 by agenow            #+#    #+#             */
-/*   Updated: 2023/12/06 11:17:54 by agenow           ###   ########.fr       */
+/*   Updated: 2023/12/06 21:31:27 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	atoi(const char *str)
+static int	ft_isspace(int c);
+
+int	ft_atoi(const char *str)
 {
 	int	sign;
 	int	i;

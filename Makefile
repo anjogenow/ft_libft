@@ -6,27 +6,23 @@
 #    By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 18:01:21 by agenow            #+#    #+#              #
-#    Updated: 2023/11/17 16:28:18 by agenow           ###   ########.fr        #
+#    Updated: 2023/12/06 21:29:57 by agenow           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-LIBRARY = libft.a
-SRC_FILES = $(wildcard *.c)
-OBJ_FILES = $(patsubst  %.c, %.o, $(SRC_FILES))
-INCLUDES = ./includes
-
-all: $(LIBRARY)
-
-$(LIBRARY):
-	$(CC) -c $(SRC_FILES) -I $(INCLUDES)
-	ar rc $(LIBRARY) $(OBJ_FILES)
-
+SRCS			= $(wildcard *.c)
+OBJS            = $(SRCS:.c=.o)
+CC				= cc
+RM				= rm -f
+CFLAGS			= -Wall -Wextra -Werror
+NAME			= libft.a
+all: $(NAME)
+$(NAME): $(OBJS)
+		$(CC) $(CFLAGS) -c $(SRCS)
+		ar rcs $(NAME) $(OBJS)
 clean:
-	rm -f $(OBJ_FILES)
-
+		$(RM) $(OBJS)
 fclean: clean
-	rm -f $(LIBRARY)
-
+		$(RM) $(NAME)
 re: fclean all
+.PHONY: all clean fclean re

@@ -6,13 +6,13 @@
 /*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:02:57 by agenow            #+#    #+#             */
-/*   Updated: 2023/11/17 13:43:20 by agenow           ###   ########.fr       */
+/*   Updated: 2023/12/06 20:58:59 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	return (ft_memset(s, 0, n));
+	ft_memset(s, 0, n);
 }

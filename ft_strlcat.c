@@ -6,7 +6,7 @@
 /*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:54:54 by agenow            #+#    #+#             */
-/*   Updated: 2023/11/17 15:14:05 by agenow           ###   ########.fr       */
+/*   Updated: 2023/12/06 21:03:04 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	src_len;
 	size_t	dst_len;
 
-	src_len = ft_strlen(src_len);
-	dst_len = ft_strlen(dst_len);
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
 	if (dst_len >= dstsize)
 		return (dstsize + src_len);
 	if (src_len + dst_len < dstsize)

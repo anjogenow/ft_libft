@@ -6,13 +6,13 @@
 /*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 09:39:38 by agenow            #+#    #+#             */
-/*   Updated: 2023/11/17 13:44:05 by agenow           ###   ########.fr       */
+/*   Updated: 2023/12/06 21:30:38 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
