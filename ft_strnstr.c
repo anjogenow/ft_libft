@@ -6,7 +6,7 @@
 /*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 10:49:09 by agenow            #+#    #+#             */
-/*   Updated: 2023/12/06 21:31:16 by agenow           ###   ########.fr       */
+/*   Updated: 2023/12/07 15:20:21 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
-	(void)j;
-	if (!needle)
+	j = 0;
+	if (*needle == 0)
 		return ((char *)haystack);
-	while (i < len)
+	while (i < len && haystack[i])
 	{
-		j = i;
-		while (haystack[j] == needle[i - j] && j < len)
+		while (haystack[i + j] == needle[j] && i + j < len)
 		{
 			j++;
-			if (needle[i - j] == '\0')
-				return ((char *)&haystack[i]);
+			if (needle[j] == '\0')
+				return ((char *) haystack + i);
 		}
+		j = 0;
 		i++;
 	}
 	return (NULL);

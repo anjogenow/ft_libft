@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agenow <agenow@student.42.fr>              +#+  +:+       +#+        */
+/*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 15:33:36 by agenow            #+#    #+#             */
-/*   Updated: 2023/12/06 15:38:55 by agenow           ###   ########.fr       */
+/*   Updated: 2023/12/07 13:32:04 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		s2++;
 	}
 	str[i] = '\0';
-	return (str);	
+	return (str);
 }

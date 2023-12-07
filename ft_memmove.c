@@ -6,7 +6,7 @@
 /*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 09:52:45 by agenow            #+#    #+#             */
-/*   Updated: 2023/11/17 13:43:57 by agenow           ###   ########.fr       */
+/*   Updated: 2023/12/07 14:31:07 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,22 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+	char	*csrc;
+	char	*cdst;
 	size_t	i;
 
-	i = 0;
 	if (!dst && !src)
-		return (dst);
-	if (dst < src)
+		return (NULL);
+	csrc = (char *)src;
+	cdst = (char *)dst;
+	i = -1;
+	if (cdst > csrc)
+		while (len-- > 0)
+			cdst[len] = csrc[len];
+	else
 	{
-		while (i < len)
-		{
-			((char *) dst)[i] = ((char *) src)[i];
-			i++;
-		}
-	}
-	if (dst > src)
-	{
-		while (len > 0)
-		{
-			((char *) dst)[len] = ((char *) src)[len];
-			len--;
-		}
+		while (++i < len)
+			cdst[i] = csrc[i];
 	}
 	return (dst);
 }
