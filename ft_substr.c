@@ -6,7 +6,7 @@
 /*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 15:05:00 by agenow            #+#    #+#             */
-/*   Updated: 2023/12/07 15:27:29 by agenow           ###   ########.fr       */
+/*   Updated: 2023/12/07 16:59:07 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	dst = ft_calloc(len + 1, sizeof(char));
 	if (!dst)
 		return (NULL);
-	ft_strlcpy(dst, s + start, len);
+	ft_strlcpy(dst, s + start, len + 1);
 	return (dst);
 }
