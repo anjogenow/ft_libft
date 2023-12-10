@@ -6,58 +6,69 @@
 /*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:59:05 by agenow            #+#    #+#             */
-/*   Updated: 2023/12/07 18:34:52 by agenow           ###   ########.fr       */
+/*   Updated: 2023/12/10 21:09:10 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_numlen(size_t n);
+static int	num_len(long nbr);
+static char	*arg_alloc(int len);
 
 char	*ft_itoa(int n)
 {
-	size_t	len;
-	size_t	i;
-	size_t	s;
-	char	*num;
+	int		len;
+	int		i;
+	char	*result;
+	long	nbr;
 
-	len = ft_numlen(n);
-	i = -1;
-	s = 0;
-	(void)num;
-	if (n < 0)
-	{
-		s++;
-		n = -n;
-	}
-	num = ft_calloc(s + len + 1, sizeof(int));
-	if (!num)
+	nbr = n;
+	len = num_len(nbr);
+	result = arg_alloc(len);
+	if (!result)
 		return (NULL);
-	if (s == 1)
-		num[0] = '-';
-	while (++i < len)
+	if (nbr < 0)
+		nbr = -nbr;
+	i = len - 1;
+	while (nbr != 0)
 	{
-		num[len - i] = n % 10;
-		n = n / 10;
+		result[i] = ((nbr % 10) + 48);
+		nbr = nbr / 10;
+		i--;
 	}
-	return (num);
+	if (n < 0)
+		result[0] = '-';
+	result[len] = 0;
+	return (result);
 }
 
-size_t	ft_numlen(size_t n)
+static char	*arg_alloc(int len)
 {
-	size_t	len;
+	char	*tmp;
 
-	len = 0;
-	if (n < 0)
+	tmp = malloc((len + 1) * sizeof(char));
+	if (!tmp)
+		return (NULL);
+	tmp[0] = '0';
+	return (tmp);
+}
+
+static int	num_len(long nbr)
+{
+	int	count;
+
+	count = 0;
+	if (nbr < 0)
 	{
-		n = -n;
-		len++;
+		count++;
+		nbr = -nbr;
 	}
-	while (n > 9)
+	if (nbr == 0)
+		count++;
+	while (nbr != 0)
 	{
-		n = n / 10;
-		len++;
+		nbr /= 10;
+		count++;
 	}
-	len++;
-	return (len);
+	return (count);
 }
