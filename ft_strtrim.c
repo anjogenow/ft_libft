@@ -6,7 +6,7 @@
 /*   By: agenow <agenow@stdent.42berlin.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 15:42:00 by agenow            #+#    #+#             */
-/*   Updated: 2023/12/10 21:30:22 by agenow           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:35:02 by agenow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	j = 0;
 	if (!s1)
 		return (NULL);
-	if (ft_strlen(s1) == 0 || !set)
+	if (!set)
 		return ((char *)s1);
 	while (ft_strchr(set, s1[i]))
 		i++;
